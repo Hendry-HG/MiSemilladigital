@@ -1,1 +1,2460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hendryanellys Hernandez- </title>
+    
+    <!-- Librerías CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Estilos personalizados -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #ffffff;
+            --accent-color: #ff2a6d;
+            --light-color: #f8f9fa;
+            --dark-color: #0a192f;
+            --text-color: #333333;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --glow-color: #00d4ff;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+            --dark-bg: #0a192f;
+            --dark-text: #e6f1ff;
+            --dark-card: rgba(10, 25, 47, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .navbar {
+            background-color: rgba(10, 25, 47, 0.95);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        body.dark-mode .navbar-brand,
+        body.dark-mode .nav-link {
+            color: var(--dark-text) !important;
+        }
+        
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        
+        body.dark-mode .section {
+            background-color: var(--dark-bg);
+        }
+        
+        body.dark-mode .skills {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        
+        body.dark-mode .card {
+            background: var(--dark-card);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        body.dark-mode .card p {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .skill-name {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .progress {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode #code-typing {
+            background-color: #172a45;
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .code-header {
+            background-color: #0a192f;
+        }
+        
+        body.dark-mode .code-filename {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode footer {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .social-icons a {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .music-player {
+            background: var(--dark-card);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        body.dark-mode .music-player h3 {
+            color: var(--primary-color);
+        }
+        
+        body.dark-mode .player-controls button {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .player-controls button:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+        
+        body.dark-mode .track-info h4 {
+            color: var(--primary-color);
+        }
+        
+        body.dark-mode .track-info p {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--purple));
+        }
+        
+        body.dark-mode .playlist-item {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .playlist-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        body.dark-mode .playlist-item.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        body.dark-mode .playlist-info h5 {
+            color: var(--primary-color);
+        }
+        
+        body.dark-mode .playlist-info p {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .playlist-duration {
+            color: var(--dark-text);
+        }
+        
+        /* Cursor personalizado */
+        * {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="none" stroke="%2300d4ff" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="%2300d4ff"/></svg>') 16 16, auto;
+        }
+        
+        a, button, .btn, .card {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="none" stroke="%23ff2a6d" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="%23ff2a6d"/></svg>') 16 16, auto;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        body.dark-mode .preloader {
+            background-color: var(--dark-bg);
+        }
+        
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .preloader-inner {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .preloader-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(0, 212, 255, 0.2);
+            border-top: 3px solid var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+        
+        .preloader-circle:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            border-top: 3px solid var(--accent-color);
+            animation-duration: 0.8s;
+            animation-direction: reverse;
+        }
+        
+        .preloader-circle:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            left: 20px;
+            border-top: 3px solid var(--purple);
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Botón de modo oscuro */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--purple));
+            color: white;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+        }
+        
+        /* Botón de volver arriba */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--purple));
+            color: white;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-brand::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 600;
+            margin: 0 15px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--purple));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            position: relative;
+        }
+        
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+        
+        .glitch {
+            position: relative;
+            color: var(--text-color);
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            animation: glitch 700ms infinite;
+        }
+        
+        .glitch span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch span:first-child {
+            animation: glitch-1 700ms infinite;
+            color: var(--primary-color);
+            z-index: -1;
+        }
+        
+        .glitch span:last-child {
+            animation: glitch-2 700ms infinite;
+            color: var(--accent-color);
+            z-index: -2;
+        }
+        
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% {
+                clip-path: inset(30% 0 70% 0);
+                transform: translate(0, -5%);
+            }
+            20% {
+                clip-path: inset(70% 0 30% 0);
+                transform: translate(0, 5%);
+            }
+            40% {
+                clip-path: inset(20% 0 60% 0);
+                transform: translate(-5%, 0);
+            }
+            60% {
+                clip-path: inset(80% 0 20% 0);
+                transform: translate(5%, 0);
+            }
+            80% {
+                clip-path: inset(10% 0 90% 0);
+                transform: translate(0, 5%);
+            }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% {
+                clip-path: inset(80% 0 20% 0);
+                transform: translate(0, 5%);
+            }
+            20% {
+                clip-path: inset(20% 0 80% 0);
+                transform: translate(0, -5%);
+            }
+            40% {
+                clip-path: inset(60% 0 40% 0);
+                transform: translate(5%, 0);
+            }
+            60% {
+                clip-path: inset(40% 0 60% 0);
+                transform: translate(-5%, 0);
+            }
+            80% {
+                clip-path: inset(90% 0 10% 0);
+                transform: translate(0, -5%);
+            }
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--text-color);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .hero-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero-info-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), #0099cc);
+            border: none;
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            color: white;
+        }
+        
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0099cc, var(--primary-color));
+            z-index: -1;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+            color: white;
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+            background-color: #ffffff;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), var(--purple), transparent);
+        }
+        
+        .card {
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.05), rgba(255, 42, 109, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .card-body {
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+        
+        .skills {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+        }
+        
+        .skill-item {
+            margin-bottom: 30px;
+        }
+        
+        .skill-name {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.05);
+            overflow: visible;
+            position: relative;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--purple));
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .skill-category {
+            margin-bottom: 50px;
+        }
+        
+        .skill-category h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-left: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .skill-category h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 70%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--purple));
+            border-radius: 4px;
+        }
+        
+        #code-typing {
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            padding: 25px;
+            border-radius: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 20px;
+            background-color: var(--primary-color);
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .code-container {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #f1f3f5;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: none;
+        }
+        
+        .code-dots {
+            display: flex;
+        }
+        
+        .code-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+        
+        .code-filename {
+            color: var(--text-color);
+            font-size: 14px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+        
+        .particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: var(--text-color);
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            position: relative;
+        }
+        
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+        
+        .social-icons a:hover::before {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .cyber-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            width: 100%;
+            animation: line-move 8s linear infinite;
+        }
+        
+        @keyframes line-move {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .cyber-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            animation: pulse 4s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+        }
+        
+        .typing-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .typing-text {
+            display: inline-block;
+        }
+        
+        /* Efectos holográficos adicionales */
+        .holographic {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .holographic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: holographic-shine 3s infinite;
+        }
+        
+        @keyframes holographic-shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+        
+        /* Efecto de distorsión de texto */
+        .text-distortion {
+            position: relative;
+        }
+        
+        .text-distortion::before,
+        .text-distortion::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .text-distortion::before {
+            color: var(--primary-color);
+            animation: distortion-1 3s infinite alternate-reverse;
+        }
+        
+        .text-distortion::after {
+            color: var(--accent-color);
+            animation: distortion-2 2s infinite alternate-reverse;
+        }
+        
+        @keyframes distortion-1 {
+            0% {
+                clip-path: inset(60% 0 40% 0);
+                transform: translate(-5px, 5px);
+            }
+            20% {
+                clip-path: inset(20% 0 70% 0);
+                transform: translate(5px, -5px);
+            }
+            40% {
+                clip-path: inset(50% 0 30% 0);
+                transform: translate(-5px, 0);
+            }
+            60% {
+                clip-path: inset(10% 0 80% 0);
+                transform: translate(5px, 0);
+            }
+            80% {
+                clip-path: inset(80% 0 20% 0);
+                transform: translate(0, 5px);
+            }
+            100% {
+                clip-path: inset(40% 0 60% 0);
+                transform: translate(0, -5px);
+            }
+        }
+        
+        @keyframes distortion-2 {
+            0% {
+                clip-path: inset(40% 0 60% 0);
+                transform: translate(5px, 0);
+            }
+            20% {
+                clip-path: inset(80% 0 20% 0);
+                transform: translate(0, -5px);
+            }
+            40% {
+                clip-path: inset(10% 0 80% 0);
+                transform: translate(-5px, 0);
+            }
+            60% {
+                clip-path: inset(60% 0 40% 0);
+                transform: translate(0, 5px);
+            }
+            80% {
+                clip-path: inset(20% 0 70% 0);
+                transform: translate(5px, 0);
+            }
+            100% {
+                clip-path: inset(50% 0 30% 0);
+                transform: translate(-5px, -5px);
+            }
+        }
+        
+        /* Efecto de neón pulsante */
+        .neon-pulse {
+            animation: neon-pulse 2s infinite alternate;
+        }
+        
+        @keyframes neon-pulse {
+            from {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px var(--primary-color),
+                    0 0 20px var(--primary-color);
+            }
+            to {
+                text-shadow: 
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 8px var(--primary-color),
+                    0 0 12px var(--primary-color);
+            }
+        }
+        
+        /* Efecto de brillo en el hover */
+        .glow-on-hover {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .glow-on-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .glow-on-hover:hover::before {
+            opacity: 1;
+        }
+        
+        /* Efecto de partículas flotantes */
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float-particle 15s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* Efecto de lluvia binaria */
+        .binary-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .binary-rain.active {
+            opacity: 1;
+        }
+        
+        .binary-column {
+            position: absolute;
+            top: -100%;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.2;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.7);
+            white-space: nowrap;
+            animation: binary-fall linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes binary-fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(calc(100vh + 100%));
+            }
+        }
+        
+        /* Espaciado adicional para evitar choques */
+        .section-spacing {
+            padding-top: 150px;
+            margin-top: -50px;
+        }
+        
+        .card-spacing {
+            margin-bottom: 50px;
+        }
+        
+        /* Estilos para la sección de música */
+        .music-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        body.dark-mode .music-section {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        
+        .music-player {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .music-player::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.05), rgba(255, 42, 109, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .music-player:hover::before {
+            opacity: 1;
+        }
+        
+        .music-player:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .music-player h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .player-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .track-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .track-info h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .track-info p {
+            color: var(--text-color);
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+        
+        .album-art {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .music-player:hover .album-art img {
+            transform: scale(1.05);
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .player-controls button {
+            background: rgba(0, 212, 255, 0.1);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .player-controls button:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .player-controls .play-pause {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary-color), var(--purple));
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .player-controls .play-pause:hover {
+            background: linear-gradient(45deg, var(--purple), var(--primary-color));
+        }
+        
+        .progress-container {
+            height: 8px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--purple));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .volume-control i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .volume-slider {
+            flex: 1;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .playlist {
+            margin-top: 30px;
+        }
+        
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .playlist-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .playlist-item.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .playlist-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .playlist-info h5 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+        
+        .playlist-info p {
+            margin-bottom: 0;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .playlist-duration {
+            margin-left: auto;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .glitch {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .album-art {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .music-player {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-circle"></div>
+            <div class="preloader-circle"></div>
+            <div class="preloader-circle"></div>
+        </div>
+    </div>
+    
+    <!-- Efectos de fondo -->
+    <div class="cyber-grid"></div>
+    
+    <!-- Partículas flotantes -->
+    <div class="floating-particles" id="particles-container"></div>
+    
+    <!-- Lluvia binaria -->
+    <div class="binary-rain" id="binary-rain"></div>
+    
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg fixed-top holographic">
+        <div class="container">
+            <a class="navbar-brand" href="#">H.O.H.G</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#sobre-mi">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#musica">Música</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div id="particles-js" class="particles-js"></div>
+        <div class="cyber-line" style="top: 20%;"></div>
+        <div class="cyber-line" style="top: 60%; animation-delay: 2s;"></div>
+        <div class="cyber-line" style="top: 80%; animation-delay: 4s;"></div>
+        <div class="cyber-circle" style="width: 300px; height: 300px; top: -150px; right: -100px;"></div>
+        <div class="cyber-circle" style="width: 200px; height: 200px; bottom: -100px; left: -50px; animation-delay: 1s;"></div>
+        
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <div class="glitch">
+                    Hendryanellys Hernandez
+                    <span>Hendryanellys Hernandez</span>
+                    <span>Hendryanellys Hernnadez</span>
+                </div>
+                <h1 class="text-distortion" data-text="Hernandez Garcia">Hernandez Garcia</h1>
+                
+                <div class="hero-info">
+                    <div class="hero-info-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>21 años</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nueva Esparta, Venezuela</span>
+                    </div>
+                </div>
+                
+                <p class="typing-container">
+                    <span class="typing-text"></span>
+                </p>
+                
+                <a href="#sobre-mi" class="btn-primary neon-pulse">Descubre mi universo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="section section-spacing">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp text-distortion" data-text="Sobre Mí">Sobre Mí</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="code-container animate__animated animate__fadeInLeft holographic">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <div class="code-dot dot-red"></div>
+                                <div class="code-dot dot-yellow"></div>
+                                <div class="code-dot dot-green"></div>
+                            </div>
+                            <div class="code-filename">mi_esencia.py</div>
+                        </div>
+                        <div id="code-typing">
+                            <span class="typing-text"></span><span class="typing-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="animate__animated animate__fadeInRight">
+                        <h3 style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-color);" class="neon-pulse">MÁS ALLÁ DEL CÓDIGO</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 30px;">Soy la suma de mis pasiones, mis relaciones y esas cosas que hago cuando nadie me está mirando. Mi esencia está conformada por piezas que, juntas, me definen y me mueven en este universo digital.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="card floating glow-on-hover card-spacing">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-laptop-code"></i> TECNOLOGÍA</h5>
+                                        <p>El mundo tecnologico es un mar en constante movimiento. Mi ritual es mantener la mente despierta, desafiar mis límites y construir cosas que importan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card floating glow-on-hover card-spacing" style="animation-delay: 0.5s;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-shield-alt"></i> CIBERSEGURIDAD</h5>
+                                        <p>Proteger sistemas y datos es mi pasión. En un mundo digital, la seguridad no es opcional, es un derecho fundamental que defiendo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card floating glow-on-hover card-spacing" style="animation-delay: 1s;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-home"></i> FAMILIA</h5>
+                                        <p>Mi familia es mi ancla y mi impulso. Ellos son el 'porqué' que da sentido a mi esfuerzo técnico y académico.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card floating glow-on-hover card-spacing" style="animation-delay: 1.5s;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-music"></i> MÚSICA</h5>
+                                        <p>La música es mi refugio y mi inspiración. Me encanta explorar nuevos sonidos y ritmos que alimentan mi creatividad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section skills section-spacing">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp text-distortion" data-text="Mis Habilidades">Mis Habilidades</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-category animate__animated animate__fadeInLeft">
+                        <h3>DESARROLLO WEB</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>PHP</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate__animated animate__fadeInLeft" style="animation-delay: 0.3s;">
+                        <h3>PYTHON</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Desarrollo General</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Django/Flask</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Automatización</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="skill-category animate__animated animate__fadeInRight" style="animation-delay: 0.6s;">
+                        <h3>CIBERSEGURIDAD</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Análisis de Vulnerabilidades</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Seguridad de Redes</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Seguridad Web</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Gestión de Identidades</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate__animated animate__fadeInRight" style="animation-delay: 0.9s;">
+                        <h3>HABILIDADES CREATIVAS</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Diseño UI/UX</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Diseño Textil</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Gestión de Proyectos</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-width="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Música -->
+    <section id="musica" class="section music-section section-spacing">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp text-distortion" data-text="Música Favorita">Música Favorita</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="music-player animate__animated animate__fadeInUp">
+                        <h3 class="neon-pulse">REPRODUCTOR DE MÚSICA</h3>
+                        <div class="player-container">
+                            <div class="track-info">
+                                <h4 id="current-track">Revolution</h4>
+                                <p id="current-artist">Diplo</p>
+                            </div>
+                            
+                            <div class="album-art">
+                                <img id="album-art" src="img/musica.jpg" alt="Revolution - Diplo">
+                            </div>
+                            
+                            <div class="player-controls">
+                                <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                                <button id="play-pause-btn" class="play-pause"><i class="fas fa-play"></i></button>
+                                <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+                            </div>
+                            
+                            <div class="progress-container" id="progress-container">
+                                <div class="progress-bar" id="progress-bar"></div>
+                            </div>
+                            
+                            <div class="time-info">
+                                <span id="current-time">0:00</span>
+                                <span id="duration">4:20</span>
+                            </div>
+                            
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
+                            </div>
+                            
+                            <div class="playlist">
+                                <div class="playlist-item active" data-track="0">
+                                    <img src="img/musica.jpg" alt="Revolution">
+                                    <div class="playlist-info">
+                                        <h5>Revolution</h5>
+                                        <p>Diplo</p>
+                                    </div>
+                                    <div class="playlist-duration">4:20</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-family: 'Orbitron', sans-serif; font-size: 1.3rem; margin-bottom: 10px;" class="text-distortion" data-text="&copy; 2023 Hendryanellys Orianays Hernandez Garcia">&copy; 2025 Hendryanellys  Hernandez </p>
+            <p style="margin-bottom: 20px;">Diseñado con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y mucho código desde Nueva Esparta</p>
+            <div class="social-icons">
+                <a href="#" class="glow-on-hover"><i class="fab fa-github"></i></a>
+                <a href="#" class="glow-on-hover"><i class="fab fa-python"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón de modo oscuro -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Botón de volver arriba -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Librerías JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- JavaScript personalizado -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1000);
+        });
+        
+        // Crear partículas flotantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-container');
+            particlesContainer.innerHTML = ''; // Limpiar partículas existentes
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                const posX = Math.random() * window.innerWidth;
+                particle.style.left = `${posX}px`;
+                particle.style.bottom = '-10px';
+                
+                // Duración de la animación aleatoria
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Retraso aleatorio
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                // Color aleatorio
+                const colors = ['#00d4ff', '#ff2a6d', '#8b5cf6', '#ffffff'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // Volver a crear partículas al cambiar el tamaño de la ventana
+        window.addEventListener('resize', () => {
+            createParticles();
+        });
+        
+        // Inicializar partículas
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#00d4ff"
+                    },
+                    shape: {
+                        type: "circle"
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: true
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#00d4ff",
+                        opacity: 0.3,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "grab"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        // Efecto de escritura para el código
+        const codeText = `# Mi esencia en código Python
+class MiEsencia:
+    def __init__(self):
+        self.nombre = "Hendryanellys Orianays Hernandez Garcia"
+        self.edad = 21
+        self.ubicacion = "Nueva Esparta, Venezuela"
+        self.pasiones = ["Tecnología", "Familia", "Creatividad", "Ciberseguridad", "Música"]
+        self.habilidades = {
+            "tecnica": ["HTML", "CSS", "JavaScript", "PHP", "Python"],
+            "seguridad": ["Análisis de Vulnerabilidades", "Seguridad de Redes", "Seguridad Web"],
+            "creativas": ["Diseño Textil", "Patín", "Música"]
+        }
+        self.motivacion = "Construir un futuro más seguro uniendo técnica y sensibilidad"
+    
+    def unir_mundos(self, tecnica, creatividad, seguridad):
+        return f"Creando soluciones innovadoras que combinan {tecnica}, {creatividad} y {seguridad}"
+    
+    def futuro(self):
+        return self.unir_mundos(
+            "desarrollo de software", 
+            "diseño intuitivo", 
+            "protección de datos"
+        )
+
+mi_esencia = MiEsencia()
+print(mi_esencia.futuro())`;
+
+        const typingElement = document.querySelector('#code-typing .typing-text');
+        let charIndex = 0;
+        let codeTypingStarted = false;
+
+        function typeCode() {
+            if (charIndex < codeText.length) {
+                typingElement.textContent += codeText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeCode, 30);
+            }
+        }
+
+        // Iniciar el efecto de escritura cuando el elemento sea visible
+        const codeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !codeTypingStarted) {
+                    codeTypingStarted = true;
+                    typeCode();
+                    codeObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const codeTypingElement = document.getElementById('code-typing');
+        if (codeTypingElement) {
+            codeObserver.observe(codeTypingElement);
+        }
+
+        // Efecto de escritura para el hero
+        const heroTypedTextSpan = document.querySelector('.hero .typing-text');
+        const phrases = [
+            "Tejedora de Código y Seguridad",
+            "Uniendo tecnología, creatividad y protección digital",
+            "Construyendo un futuro más seguro",
+            "Desde Nueva Esparta con amor"
+        ];
+        
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+
+        function typeWriter() {
+            isEnd = false;
+            heroTypedTextSpan.textContent = currentPhrase.join('');
+            
+            if (!isDeleting && letterIndex <= phrases[phraseIndex].length) {
+                currentPhrase.push(phrases[phraseIndex][letterIndex]);
+                letterIndex++;
+                setTimeout(typeWriter, 100);
+            } else if (isDeleting && letterIndex > 0) {
+                currentPhrase.pop();
+                letterIndex--;
+                setTimeout(typeWriter, 50);
+            } else if (letterIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typeWriter, 1000);
+            } else {
+                isDeleting = true;
+                isEnd = true;
+                setTimeout(typeWriter, 1500);
+            }
+        }
+
+        typeWriter();
+
+        // Animación de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Cambiar estilo de navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Animación de aparición al hacer scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated:not(.animate__animated)');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate__animated');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Ejecutar una vez al cargar la página
+        
+        // Efecto de parallax suave
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            const parallax = document.querySelector('.hero');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+        
+        // Efecto de lluvia binaria al final de la página
+        function createBinaryRain() {
+            const binaryRain = document.getElementById('binary-rain');
+            binaryRain.innerHTML = ''; // Limpiar lluvia existente
+            const columnCount = 30;
+            
+            for (let i = 0; i < columnCount; i++) {
+                const column = document.createElement('div');
+                column.classList.add('binary-column');
+                
+                // Posición horizontal aleatoria
+                const posX = Math.random() * 100;
+                column.style.left = `${posX}%`;
+                
+                // Duración de la animación aleatoria
+                const duration = Math.random() * 5 + 5;
+                column.style.animationDuration = `${duration}s`;
+                
+                // Retraso aleatorio
+                const delay = Math.random() * 5;
+                column.style.animationDelay = `${delay}s`;
+                
+                // Generar contenido binario aleatorio
+                let binaryContent = '';
+                const contentLength = Math.floor(Math.random() * 20) + 10;
+                for (let j = 0; j < contentLength; j++) {
+                    binaryContent += Math.random() > 0.5 ? '1' : '0';
+                    if (j < contentLength - 1) binaryContent += '<br>';
+                }
+                column.innerHTML = binaryContent;
+                
+                binaryRain.appendChild(column);
+            }
+        }
+        
+        createBinaryRain();
+        
+        // Detectar cuando el usuario llega al final de la página
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrolledToBottom = scrollTop + clientHeight >= scrollHeight - 100;
+            
+            const binaryRain = document.getElementById('binary-rain');
+            
+            if (scrolledToBottom) {
+                binaryRain.classList.add('active');
+            } else {
+                binaryRain.classList.remove('active');
+            }
+        });
+        
+        // Modo oscuro/claro
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Verificar si el usuario ya tiene una preferencia de tema
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Botón de volver arriba
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animación de barras de progreso
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                const position = bar.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (position < screenPosition && !bar.classList.contains('animated')) {
+                    bar.style.width = width + '%';
+                    bar.classList.add('animated');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateProgressBars);
+        animateProgressBars(); // Ejecutar una vez al cargar la página
+        
+        // Funcionalidad del reproductor de música
+        const playlist = [
+            {
+                title: "Revolution",
+                artist: "Diplo",
+                duration: "4:20",
+                durationInSeconds: 260, // 4:20 en segundos
+                albumArt: "img/musica.jpg",
+                // Ruta al archivo de audio en la carpeta audio
+                audioUrl: "audio/Revolution.mp3"
+            }
+        ];
+        
+        let currentTrackIndex = 0;
+        let isPlaying = false;
+        let currentTime = 0;
+        let duration = playlist[0].durationInSeconds; // Duración inicial
+        let progressInterval;
+        let audio = null; // Elemento de audio
+        
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const volumeSlider = document.getElementById('volume-slider');
+        const currentTrackEl = document.getElementById('current-track');
+        const currentArtistEl = document.getElementById('current-artist');
+        const albumArtEl = document.getElementById('album-art');
+        const playlistItems = document.querySelectorAll('.playlist-item');
+        
+        // Inicializar el reproductor
+        function initPlayer() {
+            // Crear un nuevo elemento de audio si no existe
+            if (!audio) {
+                audio = new Audio();
+                audio.addEventListener('timeupdate', updateProgress);
+                audio.addEventListener('ended', nextTrack);
+                audio.addEventListener('loadedmetadata', () => {
+                    duration = Math.floor(audio.duration);
+                    durationEl.textContent = formatTime(duration);
+                });
+            }
+            
+            const currentTrack = playlist[currentTrackIndex];
+            currentTrackEl.textContent = currentTrack.title;
+            currentArtistEl.textContent = currentTrack.artist;
+            albumArtEl.src = currentTrack.albumArt;
+            durationEl.textContent = currentTrack.duration;
+            duration = currentTrack.durationInSeconds;
+            
+            // Actualizar playlist activa
+            playlistItems.forEach((item, index) => {
+                if (index === currentTrackIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Cargar la fuente de audio
+            audio.src = currentTrack.audioUrl;
+            audio.load();
+        }
+        
+        // Formatear tiempo en segundos a MM:SS
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+        
+        // Reproducir o pausar
+        function togglePlayPause() {
+            if (!audio) {
+                initPlayer();
+            }
+            
+            if (isPlaying) {
+                audio.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                clearInterval(progressInterval);
+            } else {
+                audio.play().catch(error => {
+                    console.error("Error al reproducir el audio:", error);
+                    // Mostrar un mensaje de error si es necesario
+                    alert("No se pudo reproducir el audio. Verifica que el archivo 'Revolution.mp3' exista en la carpeta 'audio'.");
+                });
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                startProgress();
+            }
+            
+            isPlaying = !isPlaying;
+        }
+        
+        // Iniciar progreso
+        function startProgress() {
+            progressInterval = setInterval(() => {
+                if (audio) {
+                    currentTime = Math.floor(audio.currentTime);
+                    updateProgress();
+                }
+            }, 1000);
+        }
+        
+        // Actualizar barra de progreso
+        function updateProgress() {
+            if (audio) {
+                currentTime = Math.floor(audio.currentTime);
+                const progressPercent = (currentTime / audio.duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+            }
+        }
+        
+        // Siguiente canción
+        function nextTrack() {
+            if (!audio) {
+                initPlayer();
+            }
+            
+            clearInterval(progressInterval);
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            currentTime = 0;
+            initPlayer();
+            
+            if (isPlaying) {
+                audio.play().catch(error => {
+                    console.error("Error al reproducir el audio:", error);
+                });
+                startProgress();
+            }
+        }
+        
+        // Canción anterior
+        function prevTrack() {
+            if (!audio) {
+                initPlayer();
+            }
+            
+            clearInterval(progressInterval);
+            currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            currentTime = 0;
+            initPlayer();
+            
+            if (isPlaying) {
+                audio.play().catch(error => {
+                    console.error("Error al reproducir el audio:", error);
+                });
+                startProgress();
+            }
+        }
+        
+        // Seleccionar canción de la playlist
+        function selectTrack(index) {
+            if (!audio) {
+                initPlayer();
+            }
+            
+            clearInterval(progressInterval);
+            currentTrackIndex = index;
+            currentTime = 0;
+            initPlayer();
+            
+            if (isPlaying) {
+                audio.play().catch(error => {
+                    console.error("Error al reproducir el audio:", error);
+                });
+                startProgress();
+            }
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        prevBtn.addEventListener('click', prevTrack);
+        nextBtn.addEventListener('click', nextTrack);
+        
+        playlistItems.forEach((item, index) => {
+            item.addEventListener('click', () => selectTrack(index));
+        });
+        
+        // Hacer clic en la barra de progreso para cambiar la posición
+        progressContainer.addEventListener('click', (e) => {
+            if (!audio) return;
+            
+            const clickPosition = e.offsetX;
+            const progressBarWidth = progressContainer.offsetWidth;
+            const clickPercent = clickPosition / progressBarWidth;
+            
+            currentTime = Math.floor(audio.duration * clickPercent);
+            audio.currentTime = currentTime;
+            updateProgress();
+        });
+        
+        // Control de volumen
+        volumeSlider.addEventListener('input', (e) => {
+            if (audio) {
+                audio.volume = e.target.value / 100;
+            }
+        });
+        
+        // Inicializar reproductor
+        initPlayer();
+    </script>
+</body>
+</html>
