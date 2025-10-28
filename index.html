@@ -1435,6 +1435,133 @@
             font-size: 0.9rem;
         }
         
+        /* Estilos para la sección de presentación personal */
+        .presentation-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        body.dark-mode .presentation-section {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        
+        .presentation-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body.dark-mode .presentation-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .presentation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.05), rgba(255, 42, 109, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .presentation-card:hover::before {
+            opacity: 1;
+        }
+        
+        .presentation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .presentation-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .presentation-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.8rem;
+        }
+        
+        .presentation-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .presentation-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Estilos para la sección de intereses y hobbies */
+        .interests-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+        }
+        
+        body.dark-mode .interests-section {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        
+        .interest-card {
+            height: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .interest-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .interest-card:hover .interest-icon {
+            transform: scale(1.2);
+            color: var(--purple);
+        }
+        
+        .interest-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+        }
+        
+        .interest-description {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -1481,6 +1608,14 @@
             .music-player {
                 max-width: 100%;
             }
+            
+            .presentation-card {
+                padding: 25px;
+            }
+            
+            .interest-card {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
@@ -1517,6 +1652,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link glow-on-hover" href="#sobre-mi">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#presentacion">Presentación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link glow-on-hover" href="#intereses">Intereses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link glow-on-hover" href="#habilidades">Habilidades</a>
@@ -1621,6 +1762,103 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentación Personal -->
+    <section id="presentacion" class="section presentation-section section-spacing">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp text-distortion" data-text="Presentación Personal">Presentación Personal</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="presentation-card animate__animated animate__fadeInUp holographic">
+                        <div class="presentation-content">
+                            <h3 class="neon-pulse">MI HISTORIA</h3>
+                            <p>Nací en la hermosa isla de Margarita, en Nueva Esparta, Venezuela. Desde muy joven, sentí una fascinación por la tecnología y cómo funciona el mundo digital. A los 16 años, comencé a explorar el mundo de la programación de forma autodidacta, y desde entonces no he parado de aprender.</p>
+                            <p>Actualmente, estoy estudiando Ingeniería de Sistemas, combinando mi pasión por la tecnología con mi interés en la ciberseguridad. Mi objetivo es convertirme en una profesional capaz de crear soluciones innovadoras y seguras que marquen la diferencia.</p>
+                            <div class="presentation-quote">
+                                "La tecnología es solo una herramienta, pero con pasión y creatividad, podemos transformar el mundo."
+                            </div>
+                            <p>Mi viaje no ha sido fácil, pero cada desafío me ha hecho más fuerte y más determinada a alcanzar mis metas. Creo firmemente que el conocimiento es poder, y estoy comprometida a compartir lo que sé con otros para construir un futuro digital más seguro y accesible para todos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intereses y Hobbies -->
+    <section id="intereses" class="section interests-section section-spacing">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp text-distortion" data-text="Mis Intereses y Hobbies">Mis Intereses y Hobbies</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-skating"></i>
+                            </div>
+                            <h4 class="interest-title">Patinaje</h4>
+                            <p class="interest-description">El patinaje es mi forma de liberar energía y mantenerme activa. Me encanta la sensación de libertad que siento cuando deslizo sobre las ruedas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h4 class="interest-title">Diseño Textil</h4>
+                            <p class="interest-description">Crear diseños únicos para telas es una de mis pasiones. Me combina mi lado creativo con mi interés por la moda y el diseño.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <h4 class="interest-title">Música</h4>
+                            <p class="interest-description">La música es parte fundamental de mi vida. Disfruto de diversos géneros y siempre estoy buscando nuevas bandas y artistas que inspiren mi trabajo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4 class="interest-title">Lectura</h4>
+                            <p class="interest-description">Los libros son mi ventana a otros mundos. Disfruto especialmente de ciencia ficción, tecnología y novelas que me hacen reflexionar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="interest-title">Videojuegos</h4>
+                            <p class="interest-description">Los videojuegos no son solo entretenimiento para mí, sino también una fuente de inspiración y una forma de conectar con amigos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card floating glow-on-hover animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                        <div class="card-body interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4 class="interest-title">Fotografía</h4>
+                            <p class="interest-description">Capturar momentos especiales y paisajes de mi isla es una de mis actividades favoritas. Me ayuda a ver el mundo desde diferentes perspectivas.</p>
                         </div>
                     </div>
                 </div>
